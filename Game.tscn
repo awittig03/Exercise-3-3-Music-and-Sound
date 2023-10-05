@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://sp64y2eqbd63"]
+[gd_scene load_steps=16 format=3 uid="uid://sp64y2eqbd63"]
 
 [ext_resource type="Script" path="res://Brick/Brick_Container.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://cfb204qt38vvo" path="res://Paddle/Paddle.tscn" id="2"]
@@ -9,6 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://cb6abwxodebx1" path="res://UI/HUD.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://d03l3yccdo8fa" path="res://UI/Instructions.tscn" id="8"]
 [ext_resource type="Script" path="res://Effects/Camera.gd" id="9"]
+[ext_resource type="AudioStream" uid="uid://cpyli3lhsb5vo" path="res://Assets/bmo chrip 1.wav" id="10_pbnt0"]
+[ext_resource type="AudioStream" uid="uid://btkbk68w7hxnv" path="res://Assets/bmo chrip 2.wav" id="11_tfq0m"]
+[ext_resource type="AudioStream" uid="uid://dg6jem6nhf3es" path="res://Assets/music game 3.mp3" id="12_g4gwc"]
+[ext_resource type="Script" path="res://Comet_Container.gd" id="13_y4abb"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(200, 1000)
@@ -74,3 +78,22 @@ visible = false
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0
 script = ExtResource("9")
+
+[node name="Wall" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_pbnt0")
+
+[node name="Brick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_tfq0m")
+
+[node name="Paddle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_pbnt0")
+
+[node name="Die" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_tfq0m")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_g4gwc")
+autoplay = true
+
+[node name="Comet_Container" type="Node2D" parent="."]
+script = ExtResource("13_y4abb")
